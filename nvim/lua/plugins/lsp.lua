@@ -18,7 +18,7 @@ return {
         "lua_ls",
         "html",
         "cssls",
-        "ts_ls"
+        "ts_ls",
       },
       handlers = {
         function(server_name)

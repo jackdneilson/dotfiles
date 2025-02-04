@@ -20,6 +20,9 @@ return {
     format_on_save = {
       lsp_format = "fallback",
       timeout_ms = 500
+    },
+    formatters_by_ft = {
+      javascript = { "prettierd", "prettier", stop_after_first = true }
     }
   }
 }
