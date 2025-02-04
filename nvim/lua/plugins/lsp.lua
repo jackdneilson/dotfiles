@@ -85,7 +85,7 @@ return {
         ['<C-e>'] = cmp.mapping.abort(),
       },
       sources = cmp.config.sources({
-        { name = "nvim-slp" },
+        { name = "nvim-lsp" },
         { name = "luasnip" },
         { name = "buffer" }
       })
