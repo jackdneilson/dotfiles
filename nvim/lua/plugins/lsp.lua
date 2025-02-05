@@ -81,6 +81,7 @@ return {
         "html",
         "cssls",
         "ts_ls",
+        "emmet_language_server"
       },
       handlers = {
         function(server_name)
