@@ -3,4 +3,4 @@ Trouble
 NVIM-DAP
 Neotest
 NVIM-DAP-UI
-
+Fugitive
