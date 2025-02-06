@@ -15,12 +15,20 @@ return {
       desc = "Find files"
     },
     {
-      "<leader>fg",
+      "<leader>fG",
       function()
         require("telescope.builtin").live_grep()
       end,
       mode = "n",
-      desc = "Live grep"
+      desc = "Live grep in cwd"
+    },
+    {
+      "<leader>fg",
+      function()
+        require("telescope.builtin").live_grep({ search_dirs = { vim.fn.expand("%:p") } })
+      end,
+      mode = "n",
+      desc = "Live grep in current file"
     },
   },
   config = function()

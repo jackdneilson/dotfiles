@@ -7,7 +7,12 @@ return {
       preset = "classic",
       options = {
         show_source = false,
+        show_all_diags_on_cursorline
       }
+    })
+    vim.diagnostic.config({
+      virtual_text = false,
+      virtual_lines = false
     })
   end
 }

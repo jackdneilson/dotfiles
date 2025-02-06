@@ -1,6 +1,5 @@
-Trouble
+ToggleTerm
 ---
 NVIM-DAP
 Neotest
 NVIM-DAP-UI
-Fugitive
