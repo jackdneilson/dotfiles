@@ -9,9 +9,5 @@ return {
         show_source = false,
       }
     })
-    vim.diagnostic.config({
-      virtual_text = false,
-      underline = true
-    })
   end
 }

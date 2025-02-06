@@ -33,6 +33,11 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.termguicolors = true
 
+vim.diagnostic.config({
+  virtual_text = false,
+  -- virtual_lines = true
+})
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
