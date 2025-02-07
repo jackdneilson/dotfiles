@@ -20,6 +20,13 @@ return {
         })
       }
     })
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "neotest-output-panel",
+      callback = function()
+        vim.cmd("norm G")
+      end
+    })
   end,
   keys = {
     { "<leader>t",  "",                                                                                 desc = "+test" },
