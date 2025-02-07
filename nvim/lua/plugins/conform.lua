@@ -1,7 +1,10 @@
 return {
   {
     'stevearc/conform.nvim',
-    dependencies = { "neovim/nvim-lspconfig" },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason.nvim"
+    },
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
     keys = {
