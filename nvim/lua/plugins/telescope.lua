@@ -30,8 +30,17 @@ return {
       mode = "n",
       desc = "Live grep in current file"
     },
+    {
+      "<leader>fn",
+      function()
+        require("telescope").extensions.notify.notify()
+      end,
+      mode = "n",
+      desc = "Find notifications"
+    },
   },
   config = function()
     require("telescope").load_extension("fzf")
+    require("telescope").load_extension("notify")
   end
 }
