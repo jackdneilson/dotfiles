@@ -8,11 +8,19 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function()
+            vim.opt_local.number = true
+            vim.opt_local.relativenumber = true
+          end
+        }
+      },
       filesystem = {
         hijack_netrw_behavior = "open_current",
         window = {
           mappings = {
-            -- disable fzf
             ["/"] = "noop"
           }
         }
