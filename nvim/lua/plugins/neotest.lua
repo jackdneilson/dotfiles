@@ -29,7 +29,9 @@ return {
     })
   end,
   keys = {
-    { "<leader>t",  "",                                                                                 desc = "+test" },
+    { "<leader>t",  "", desc = "+test" },
+
+    -- Run tests
     {
       "<leader>tt",
       function()
@@ -62,6 +64,37 @@ return {
       end,
       desc = "Run Last (Neotest)"
     },
+
+    -- Debug tests
+    { "<leader>td", "", desc = "+debug-test" },
+    {
+      "<leader>tdt",
+      function()
+        require("neotest").output_panel.clear()
+        require("neotest").run.run({
+          vim.fn.expand("%"),
+          strategy = "dap"
+        })
+      end,
+      desc = "Debug File (Neotest)"
+    },
+    {
+      "<leader>tdr",
+      function()
+        require("neotest").output_panel.clear()
+        require("neotest").run.run({ strategy = "dap" })
+      end,
+      desc = "Debug Nearest (Neotest)"
+    },
+    {
+      "<leader>tdl",
+      function()
+        require("neotest").output_panel.clear()
+        require("neotest").run.run_last({ strategy = "dap" })
+      end,
+      desc = "Debug Last (Neotest)"
+    },
+
     { "<leader>ts", function() require("neotest").summary.toggle() end,                                 desc = "Toggle Summary (Neotest)" },
     { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output (Neotest)" },
     { "<leader>tO", function() require("neotest").output_panel.toggle() end,                            desc = "Toggle Output Panel (Neotest)" },
