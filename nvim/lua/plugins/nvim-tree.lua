@@ -1,6 +1,13 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  lazy = false,
   opts = {
+    hijack_unnamed_buffer_when_opening = true,
+    ui = {
+      confirm = {
+        default_yes = true
+      }
+    },
     view = {
       relativenumber = true
     },
