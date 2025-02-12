@@ -18,9 +18,7 @@ return {
       "<cmd>Yazi toggle<cr>",
       desc = "Resume the last yazi session",
     },
-
   },
-
   opts = {
     open_for_directories = true,
     keymaps = {
