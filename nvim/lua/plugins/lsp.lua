@@ -81,7 +81,9 @@ return {
         "html",
         "cssls",
         "ts_ls",
-        "emmet_language_server"
+        "emmet_language_server",
+        "tailwindcss",
+        "basedpyright",
       },
       handlers = {
         function(server_name)

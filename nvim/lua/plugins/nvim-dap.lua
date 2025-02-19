@@ -45,7 +45,8 @@ return {
       require("mason-nvim-dap").setup({
         automatic_installation = true,
         ensure_installed = {
-          "js"
+          "js",
+          "python"
         },
         handlers = {
           -- function(config)
@@ -73,6 +74,32 @@ return {
                 program = "${file}",
                 cwd = "${workspaceFolder}"
               }
+            }
+
+            dap.adapters["python"] = {
+              type = "executable",
+              command = vim.fn.stdpath("data") .. "/mason/packages/debugpy/bin/python",
+              args = { "-m", "debugpy.adapter" },
+              options = {
+                source_filetype = "python"
+              }
+            }
+
+            dap.configurations.python = {
+              type = "python",
+              request = "launch",
+              name = "Launch file",
+              program = "${file}",
+              pythonPath = function()
+                local cwd = vim.fn.getcwd()
+                if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+                  return cwd .. '/venv/bin/python'
+                elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+                  return cwd .. '/.venv/bin/python'
+                else
+                  return '/usr/bin/python'
+                end
+              end,
             }
 
             require("mason-nvim-dap").default_setup(config)
