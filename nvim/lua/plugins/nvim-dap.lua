@@ -49,9 +49,6 @@ return {
           "python"
         },
         handlers = {
-          -- function(config)
-          --   require("mason-nvim-dap").default_setup(config)
-          -- end,
           js = function(config)
             local dap = require("dap")
             local location = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
@@ -76,62 +73,44 @@ return {
               }
             }
 
+            require("mason-nvim-dap").default_setup(config)
+          end,
+
+          python = function(config)
+            local dap = require("dap")
+
             dap.adapters["python"] = {
               type = "executable",
-              command = vim.fn.stdpath("data") .. "/mason/packages/debugpy/bin/python",
+              command = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python",
               args = { "-m", "debugpy.adapter" },
               options = {
                 source_filetype = "python"
               }
             }
 
-            dap.configurations.python = {
-              type = "python",
-              request = "launch",
-              name = "Launch file",
-              program = "${file}",
-              pythonPath = function()
-                local cwd = vim.fn.getcwd()
-                if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
-                  return cwd .. '/venv/bin/python'
-                elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
-                  return cwd .. '/.venv/bin/python'
-                else
-                  return '/usr/bin/python'
-                end
-              end,
-            }
+            -- dap.configurations.python = {
+            --   {
+            --     type = "python",
+            --     request = "launch",
+            --     name = "Launch file",
+            --     program = "${file}",
+            --     pythonPath = function()
+            --       local cwd = vim.fn.getcwd()
+            --       if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+            --         return cwd .. '/venv/bin/python'
+            --       elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+            --         return cwd .. '/.venv/bin/python'
+            --       else
+            --         return '/usr/bin/python'
+            --       end
+            --     end,
+            --   }
+            -- }
 
             require("mason-nvim-dap").default_setup(config)
           end
         }
       })
     end,
-    -- opts = {
-    --   automatic_installation = true,
-    --   ensure_installed = {
-    --     "js-debug-adapter"
-    --   },
-    --   handlers = {
-    --     function(config)
-    --       require("mason-nvim-dap").default_setup(config)
-    --     end,
-    --     js = function(config)
-    --       local location = vim.fn.stdpath("data") .. "/mason/packages/js-debug/src/dapDebugServer.js"
-
-    --       config.adapters = {
-    --         type = "server",
-    --         host = "localhost",
-    --         port = "${port}",
-    --         executable = {
-    --           command = "node",
-    --           args = { location .. "/extension/debugAdapter.js", "${port}" }
-    --         }
-    --       }
-
-    --       require("mason-nvim-dap").default_setup(config)
-    --     end
-    --   }
-    -- }
   }
 }
