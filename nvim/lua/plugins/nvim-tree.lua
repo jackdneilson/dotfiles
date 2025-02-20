@@ -24,5 +24,6 @@ return {
   },
   keys = {
     { "<leader>fv", "<cmd>NvimTreeToggle<CR>", desc = "Toggle directory tree view" },
+    { "<leader>fr", "<cmd>NvimTreeFocus<CR>",  desc = "Focus directory tree view" }
   }
 }

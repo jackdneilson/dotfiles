@@ -39,18 +39,6 @@ return {
       mode = "n",
       desc = "Find notifications"
     },
-    {
-      "<leader>fb",
-      function()
-        require("telescope").extensions.file_browser.file_browser()
-      end
-    },
-    {
-      "<leader>fr",
-      function()
-        require("telescope").extensions.file_browser.file_browser({ path = "~" })
-      end
-    }
   },
   config = function()
     require("telescope").setup({
@@ -58,6 +46,5 @@ return {
     })
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("notify")
-    require("telescope").load_extension("file_browser")
   end
 }
