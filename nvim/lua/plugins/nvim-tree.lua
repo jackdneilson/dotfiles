@@ -1,8 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  lazy = false,
   opts = {
-    hijack_unnamed_buffer_when_opening = true,
     ui = {
       confirm = {
         default_yes = true
@@ -26,6 +24,5 @@ return {
   },
   keys = {
     { "<leader>fv", "<cmd>NvimTreeToggle<CR>", desc = "Toggle directory tree view" },
-    { "<leader>fr", "<cmd>NvimTreeFocus<CR>",  desc = "Focus directory tree view" }
   }
 }
