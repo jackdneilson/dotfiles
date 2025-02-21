@@ -13,7 +13,30 @@ return {
     vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
     require("neo-tree").setup({
-      close_if_last_window = true
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function()
+            vim.cmd [[ setlocal relativenumber ]]
+          end
+        }
+      },
+      filesystem = {
+        window = {
+          mappings = {
+            ["/"] = "noop",
+            ["v"] = "vsplit_nofocus"
+          }
+        },
+        commands = {
+          vsplit_nofocus = function(state)
+            require("neo-tree.sources.filesystem.commands").open_vsplit(state)
+            vim.schedule(function()
+              vim.cmd([[Neotree focus]])
+            end)
+          end
+        }
+      }
     })
   end,
   keys = {
