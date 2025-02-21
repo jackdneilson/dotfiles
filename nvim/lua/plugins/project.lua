@@ -2,7 +2,12 @@ return {
   "coffebar/neovim-project",
   opts = {
     projects = {
-      "~/dotfiles/nvim/lua/",
+      "~/dotfiles/nvim/",
+      "~/src/DMS/*",
+      "~/src/DDCS/",
+      "~/src/OCP/*",
+      "~/src/iBIS/*",
+      "~/src/odin-project"
     },
     picker = {
       type = "telescope",
@@ -19,4 +24,8 @@ return {
   },
   lazy = false,
   priority = 100,
+  keys = {
+    { "<leader>pv", "<cmd>NeovimProjectDiscover<CR>", desc = "Open project finder" },
+    { "<leader>ph", "<cmd>NeovimProjectHistory<CR>",  desc = "Open project history" },
+  }
 }
