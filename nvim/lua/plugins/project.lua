@@ -25,7 +25,7 @@ return {
   lazy = false,
   priority = 100,
   keys = {
-    { "<leader>pv", "<cmd>NeovimProjectDiscover<CR>", desc = "Open project finder" },
-    { "<leader>ph", "<cmd>NeovimProjectHistory<CR>",  desc = "Open project history" },
+    { "<leader>fp", "<cmd>NeovimProjectDiscover<CR>", desc = "Open project finder" },
+    { "<leader>fh", "<cmd>NeovimProjectHistory<CR>",  desc = "Open project history" },
   }
 }

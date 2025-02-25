@@ -38,6 +38,14 @@ return {
       mode = "n",
       desc = "Find notifications"
     },
+    {
+      "<leader>fq",
+      function()
+        require("telescope.builtin").quickfix()
+      end,
+      mode = "n",
+      desc = "Find in quickfix list"
+    },
   },
   config = function()
     require("telescope").setup({
