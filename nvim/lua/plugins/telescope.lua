@@ -55,12 +55,20 @@ return {
       desc = "Find in quickfix list"
     },
     {
-      "<leader>fb",
+      "<leader>fj",
       function()
-        require("telescope.builtin").buffers()
+        require("telescope.builtin").jumplist()
       end,
       mode = "n",
-      desc = "Find buffers"
+      desc = "Find in jump list"
+    },
+    {
+      "<leader>fm",
+      function()
+        require("telescope.builtin").marks()
+      end,
+      mode = "n",
+      desc = "Find marks"
     }
   },
   config = function()
