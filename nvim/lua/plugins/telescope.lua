@@ -15,6 +15,14 @@ return {
       desc = "Find files"
     },
     {
+      "<leader>fr",
+      function()
+        require("telescope.builtin").find_files({ cwd = "~" })
+      end,
+      mode = "n",
+      desc = "Find files in home"
+    },
+    {
       "<leader>fG",
       function()
         require("telescope.builtin").live_grep()
@@ -46,11 +54,17 @@ return {
       mode = "n",
       desc = "Find in quickfix list"
     },
+    {
+      "<leader>fb",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      mode = "n",
+      desc = "Find buffers"
+    }
   },
   config = function()
-    require("telescope").setup({
-      hijack_netrw = true
-    })
+    require("telescope").setup({})
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("notify")
   end
