@@ -3,11 +3,13 @@ return {
   opts = {
     projects = {
       "~/dotfiles/nvim/",
+      "~/.dotfiles/nvim",
+      "~/doc",
+
       "~/src/DMS/*",
-      "~/src/DDCS/",
+      "~/src/DDCS/*",
       "~/src/OCP/*",
       "~/src/iBIS/*",
-      "~/src/odin-project"
     },
     picker = {
       type = "telescope",
