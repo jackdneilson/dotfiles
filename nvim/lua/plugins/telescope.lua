@@ -15,14 +15,6 @@ return {
       desc = "Find files"
     },
     {
-      "<leader>fr",
-      function()
-        require("telescope.builtin").find_files({ cwd = "~" })
-      end,
-      mode = "n",
-      desc = "Find files in home"
-    },
-    {
       "<leader>fG",
       function()
         require("telescope.builtin").live_grep()

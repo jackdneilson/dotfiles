@@ -1,8 +1,8 @@
 return {
   {
-    'nanozuki/tabby.nvim',
+    "nanozuki/tabby.nvim",
     lazy = false,
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("tabby").setup()
     end,

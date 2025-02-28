@@ -13,6 +13,9 @@ return {
     vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
     require("neo-tree").setup({
+      source_selector = {
+        winbar = true
+      },
       event_handlers = {
         {
           event = "neo_tree_buffer_enter",
@@ -22,6 +25,10 @@ return {
         }
       },
       filesystem = {
+        bind_to_cwd = true,
+        cwd_target = {
+          sidebar = "none",
+        },
         window = {
           mappings = {
             ["/"] = "noop",
@@ -40,6 +47,7 @@ return {
     })
   end,
   keys = {
-    { "<leader>fv", "<cmd>Neotree toggle<CR>", desc = "Toggle Neotree" }
+    { "<leader>fv", "<cmd>Neotree toggle .<CR>", desc = "Toggle Neotree Files" },
+    { "<leader>fr", "<cmd>Neotree toggle ~<CR>", desc = "Toggle Neotree Files Root" }
   }
 }
