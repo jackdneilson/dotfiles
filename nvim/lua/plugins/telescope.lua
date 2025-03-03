@@ -3,8 +3,7 @@ return {
   tag = "0.1.8",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim",  build = "make" },
-    { "nvim-telescope/telescope-file-browser.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   keys = {
     {
@@ -63,22 +62,6 @@ return {
       mode = "n",
       desc = "Find marks"
     },
-    {
-      "<leader>fv",
-      ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-      mode = "n",
-      desc = "Open file browser in cwd"
-    },
-    {
-      "<leader>fr",
-      function()
-        require("telescope").extensions.file_browser.file_browser({
-          path = vim.fn.getcwd(),
-        })
-      end,
-      mode = "n",
-      desc = "Open file browser in cwd"
-    }
   },
 
   config = function()
@@ -91,6 +74,5 @@ return {
     })
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("notify")
-    require("telescope").load_extension("file_browser")
   end
 }
