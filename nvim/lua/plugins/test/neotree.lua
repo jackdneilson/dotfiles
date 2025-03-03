@@ -24,6 +24,9 @@ return {
           end
         }
       },
+      buffers = {
+        bind_to_cwd = false,
+      },
       filesystem = {
         bind_to_cwd = true,
         cwd_target = {
@@ -47,7 +50,6 @@ return {
     })
   end,
   keys = {
-    { "<leader>fv", "<cmd>Neotree toggle .<CR>", desc = "Toggle Neotree Files" },
-    { "<leader>fr", "<cmd>Neotree toggle ~<CR>", desc = "Toggle Neotree Files Root" }
+    { "<leader>fv", "<cmd>Neotree toggle<CR>", desc = "Toggle Neotree Files" },
   }
 }
