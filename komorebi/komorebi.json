@@ -3,16 +3,26 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/dotfiles/komorebi/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "default_workspace_padding": 10,
-  "default_container_padding": 10,
+  "default_workspace_padding": 5,
+  "default_container_padding": 5,
   "border": true,
-  "border_width": 8,
+  "border_width": 4,
   "border_offset": -1,
-  "theme": {
-    "palette": "Base16",
-    "name": "Ashes",
-    "unfocused_border": "Base03",
-    "bar_accent": "Base0D"
+  "border_colours": {
+    "single": "#4e88d9",
+    "stack": "#4e88d9",
+    "monocle": "#4e88d9",
+    "unfocused": "#808080"
+  },
+  "stackbar": {
+    "height": 30,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 300,
+      "focused_text": "#4e88d9",
+      "unfocused_text": "#b3b3b3",
+      "background": "#303949"
+    }
   },
   "monitors": [
     {
@@ -35,14 +45,6 @@
         },
         {
           "name": "V",
-          "layout": "BSP"
-        },
-        {
-          "name": "VI",
-          "layout": "BSP"
-        },
-        {
-          "name": "VII",
           "layout": "BSP"
         }
       ]
