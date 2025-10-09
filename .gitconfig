@@ -1,0 +1,6 @@
+[core]
+	editor = nvim
+	autocrlf = true
+[user]
+	name = Jack Neilson
+	email = j.neilson@jfdglobal.com
