@@ -2,6 +2,7 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
+    "compatibility.enableUnfocusedAcrylic": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -10,6 +11,10 @@
         {
             "id": null,
             "keys": "enter"
+        },
+        {
+            "id": "Terminal.MoveFocusLeft",
+            "keys": "alt+h"
         },
         {
             "id": null,
@@ -34,10 +39,6 @@
         {
             "id": "Terminal.MoveFocusDown",
             "keys": "alt+j"
-        },
-        {
-            "id": "Terminal.MoveFocusLeft",
-            "keys": "alt+h"
         },
         {
             "id": "Terminal.MoveFocusRight",
@@ -74,14 +75,13 @@
     {
         "defaults": 
         {
+            "colorScheme": "carbonfox",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font"
             },
-            "opacity": 70,
             "padding": "0",
-            "scrollbarState": "hidden",
-            "useAcrylic": true
+            "scrollbarState": "hidden"
         },
         "list": 
         [
@@ -92,39 +92,45 @@
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{2da5328f-d503-5d4e-98be-e62e3f99c5c4}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{8a0e450a-ef48-5b2c-99a6-526036a8b136}",
+                "guid": "{93336a24-2bd0-5e45-9e2b-105cc90dcb3b}",
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "Git Bash",
-                "source": "Git"
+                "name": "Command Prompt"
             }
         ]
     },
-    "schemes": [],
+    "schemes": 
+    [
+        {
+            "background": "#161616",
+            "black": "#282828",
+            "blue": "#78A9FF",
+            "brightBlack": "#484848",
+            "brightBlue": "#8CB6FF",
+            "brightCyan": "#52BDFF",
+            "brightGreen": "#46C880",
+            "brightPurple": "#C8A5FF",
+            "brightRed": "#F16DA6",
+            "brightWhite": "#E4E4E5",
+            "brightYellow": "#2DC7C4",
+            "cursorColor": "#F2F4F8",
+            "cyan": "#33B1FF",
+            "foreground": "#F2F4F8",
+            "green": "#25BE6A",
+            "name": "carbonfox",
+            "purple": "#BE95FF",
+            "red": "#EE5396",
+            "selectionBackground": "#2A2A2A",
+            "white": "#DFDFE0",
+            "yellow": "#08BDBA"
+        }
+    ],
     "showTerminalTitleInTitlebar": true,
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }
