@@ -6,3 +6,5 @@ LazyVim.terminal.setup("powershell")
 vim.opt.softtabstop = 2
 vim.opt.incsearch = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.textwidth = 80
+vim.opt.wrap = true

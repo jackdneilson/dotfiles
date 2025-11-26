@@ -13,10 +13,6 @@
             "keys": "enter"
         },
         {
-            "id": "Terminal.MoveFocusLeft",
-            "keys": "alt+h"
-        },
-        {
             "id": null,
             "keys": "ctrl+alt+left"
         },
@@ -35,18 +31,6 @@
         {
             "id": null,
             "keys": "alt+shift+minus"
-        },
-        {
-            "id": "Terminal.MoveFocusDown",
-            "keys": "alt+j"
-        },
-        {
-            "id": "Terminal.MoveFocusRight",
-            "keys": "alt+l"
-        },
-        {
-            "id": "Terminal.MoveFocusUp",
-            "keys": "alt+k"
         },
         {
             "id": "Terminal.ResizePaneDown",

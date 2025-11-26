@@ -15,6 +15,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- Disable rocks otherwise it loops trying to build
+  rocks = {
+    enabled = false,
+  },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
